@@ -91,7 +91,7 @@
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <form class= "mx-2 my-auto w-full" method="GET">
-            <a href="LogoutServlet" class="btn btn-secondary  form-rounded" >Logout
+            <a href="logout.html" class="btn btn-secondary  form-rounded" >Logout
             
             </a>
           </form>
@@ -128,7 +128,7 @@
             </b>
             <br>
             <br>
-            ID:  ${user.id}
+            ID:  ${user.userId}
             <br> 
             <br>
             <br>
@@ -184,10 +184,10 @@
                     </div>
                     
                     <div class="col-md-4">
-                      <form class= "mx-2 my-auto w-full" action="Admin-AddProduct.html" method="POST">
+                      <form class= "mx-2 my-auto w-full" action="Add-Product.html" method="POST">
                         <input type="text" name="id" placeholder="Enter Product ID" required>
                       <select name="category">
-                          <option value="Category">Category
+                          <option value="category">Category
                           </option>
                            <c:forEach  var="cat"  items= "${category}">
                           <option >${cat.name}
@@ -198,8 +198,8 @@
                         <input type="text" name="description" placeholder="Description" required>
                         <input type="number"  name="price" placeholder="Price " required>
                          <input type="text"  name="brand" placeholder="Brand" required>
-                                  
-                       
+                         <input type="long"  name="rating" placeholder="Rating " required>
+                       <input type="number"  name="offer" placeholder="Offer " required>
                        <span style="color:red"><b>${productError}</b></span>
                                    </div>
                   </div>   
@@ -213,7 +213,7 @@
           </div>
         </div>
         <div class="col-md-3">
-          <button class="btn btn-dark form-rounded" style="width:30%; position: absolute; bottom: 50px; right: 20px;" type="submit">Add
+          <button class="btn btn-dark form-rounded" style="width:30%; position: absolute; bottom: 50px; right: 20px;">Add
           </button>
           <br>
           <button class="btn btn-secondary form-rounded" style="width:30%;  position: absolute; bottom: 0; right: 20px;"  type="reset">Cancel

@@ -46,7 +46,7 @@ window.location = elm.value;
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
                             <form class="mx-2 my-auto w-full">
-                                <a href="Logout.html" class="btn btn-secondary  form-rounded" >Logout
+                                <a href="logout.html" class="btn btn-secondary  form-rounded" >Logout
            
             </a>
                             </form>
@@ -72,10 +72,10 @@ window.location = elm.value;
     <picture>
         <img src="images/profile.png" alt="Profile picture" width="50px"></img>
     </picture><br>
-    <input id="prodId" name="userId" type="hidden" value=${user.userId}>
+    
     <b>${user.name}</b>
 <br><br>
-ID: <br> ${user.id}
+ID: <br> ${user.userId}
 <br><br>
 Designation:<br>
 ${user.designation}
@@ -108,36 +108,31 @@ ${user.designation}
                               <div id="home" class="container tab-pane active"><br>
         
                         <div class="col-md-12 bg-light">
-                                <form class="mx-2 my-auto d-inline w-20" action="ShowProductByCategoryServlet" method="POST">
+                                <form class="mx-2 my-auto d-inline w-20" action="fetchCategory" method="POST">
                                         <div class="input-group">
                                             <input list="category" name="browser" class="form-rounded" placeholder="Choose Action">
                                             <datalist id="category">
-                                              <option value="Personal Care" selected>
-                                              <option value="Laptops">
-                                              <option value="Art Supplies">
-                                             </datalist>    
+                                              </datalist>    
 
-
+													
                                                     &emsp;&nbsp;&nbsp;
-                                                    <input type="text" name="category" class="form-rounded border border-right-0" placeholder="Category Name">
+                                                    <input type="text" name="name" class="form-rounded border border-right-0" placeholder="Category Name">
                                                     <span class="input-group-append">
-                                                    <button class="btn btn-outline-secondary border border-left-0" type="submit">
-                                                        <i class="fa fa-search"></i>                              
+                                                    <a href="fetchCategory"><button class="btn btn-outline-secondary border border-left-0" type="submit">
+                                                        <i class="fa fa-search"></i></a>                              
                                                     </button>
                                                   </span>
-
+												
                                                   &emsp;&emsp;
                                                       <select name="select-city" onchange="location = this.value;">
 <option value="">Select-Sorting Type</option>
- <option value="http://localhost:8020/GrizzlyStore/SortByRatingServlet?order=LowToHigh">Low To High</option>
- <option value="http://localhost:8020/GrizzlyStore/SortByRatingServlet?order=HighToLow">High To Low</option>
+ <option value="sortByRating.html?order=LTH">Low To High</option>
+ <option value="sortByRating.html?order=HTL">High To Low</option>
 </select>  &emsp;&emsp;&emsp;&emsp;&emsp;
 </form>
-		
-											 
+												 
                                                        <a href="Admin-AddProduct.html" class="btn btn-dark form-rounded" >Add Product</a>
-					
-<form>
+		<form>
                         </div>
     
                                      <br>     <br>                
@@ -181,12 +176,12 @@ ${user.designation}
                           </td>
                           <td>
                             <center>
-                              <a href="FetchProductServlet?id=${product.id}" class="btn btn-secondary form-rounded"  width="50px"> &emsp;View&emsp; 
+                              <a href="viewProduct.html?id=${product.id }" class="btn btn-secondary form-rounded"  width="50px"> &emsp;View&emsp; 
                               </a>&emsp;&emsp;
-								<input id="prodId" name="userId" type="hidden" value=${user.userId}>
+								
                               <button class="btn btn-secondary form-rounded" type="button"> &emsp;Block&emsp; 
                               </button>&emsp;&emsp;
-                              <a  href="DeleteProductServlet?id=${product.id }" class="btn btn-secondary form-rounded">&nbsp;Remove&nbsp; 
+                              <a  href="deleteProduct.html?id=${product.id }" class="btn btn-secondary form-rounded">&nbsp;Remove&nbsp; 
                               </a>
                             </center>
                           </td>

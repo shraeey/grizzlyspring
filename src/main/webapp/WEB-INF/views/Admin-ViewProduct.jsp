@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" isELIgnored="false"%>
+    <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head> <title>View Products</title>
@@ -36,7 +39,7 @@
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
                            <form class="mx-2 my-auto w-full">
-                                <a href="LogoutServlet" class="btn btn-secondary  form-rounded" >Logout
+                                <a href="logout.html" class="btn btn-secondary  form-rounded" >Logout
            
             </a>
                             </form>
@@ -63,7 +66,7 @@
     </picture><br>
     <b>${user.name}</b>
 <br><br>
-ID:<br> ${user.id}
+ID:<br> ${user.userId}
 <br><br>
 Designation:<br>
 ${user.designation}
@@ -139,6 +142,8 @@ ${user.designation}
                         <div class="col-md-4 bg-light"> 
                                      <br>  <br> <br>          <br>                      
         <span style="color: gray">${product.description}</span><span class="fa fa-pencil-square" aria-hidden="true"></span>
+       <span style="float:bottom"><p><b>Rs.${product.price }/-</b>
+       <sub>${product.offer}%</sub></p></span>
        
                 
         </textarea>
